@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import importlib
 import json
+import os
 import sys
 import threading
 import time
@@ -16,6 +17,20 @@ from PIL import Image
 
 from . import __version__
 from .config import Settings, get_settings
+
+
+def _configure_torch_runtime() -> None:
+    """Keep CPU inference responsive on small hosted containers."""
+    try:
+        torch = importlib.import_module("torch")
+    except Exception:
+        return
+
+    try:
+        torch.set_num_threads(int(os.getenv("TORCH_NUM_THREADS", "1")))
+        torch.set_num_interop_threads(int(os.getenv("TORCH_NUM_INTEROP_THREADS", "1")))
+    except Exception:
+        return
 
 
 class BackendConfigurationError(RuntimeError):
@@ -55,6 +70,7 @@ class FarmEasyModelService:
                 return self._farm
             self._validate_bundle_files()
             self._ensure_bundle_importable()
+            _configure_torch_runtime()
             try:
                 farm_module = importlib.import_module("farmeasy")
                 self._predict_module = importlib.import_module("predict")

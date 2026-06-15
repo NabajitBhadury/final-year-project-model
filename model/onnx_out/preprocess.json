@@ -1,0 +1,47 @@
+{
+  "classes": [
+    "Blight",
+    "Common_Rust",
+    "Gray_Leaf_Spot",
+    "Healthy",
+    "Insects_damage"
+  ],
+  "leaf_gate": {
+    "file": "leaf_gate.onnx",
+    "img_size": 224,
+    "resize": 248,
+    "crop": 224,
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "leaf_index": 1,
+    "threshold": 0.5
+  },
+  "disease_models": [
+    {
+      "key": "effb3",
+      "file": "effb3.onnx",
+      "img_size": 256,
+      "resize": 283,
+      "crop": 256,
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "weight": 0.20033956427540223
+    }
+  ]
+}

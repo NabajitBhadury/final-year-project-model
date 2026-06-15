@@ -1,0 +1,153 @@
+{
+  "img_size": 256,
+  "tta": true,
+  "vflip_tta": true,
+  "ensemble_weights": {
+    "effb3": 0.20033956427540223,
+    "effb4": 0.20054902849235448,
+    "convnext": 0.20029640547828154,
+    "densenet": 0.19960457120851158,
+    "resnet50": 0.19921043054545015
+  },
+  "class_to_idx": {
+    "Blight": 0,
+    "Common_Rust": 1,
+    "Gray_Leaf_Spot": 2,
+    "Healthy": 3,
+    "Insects_damage": 4
+  },
+  "idx_to_class": {
+    "0": "Blight",
+    "1": "Common_Rust",
+    "2": "Gray_Leaf_Spot",
+    "3": "Healthy",
+    "4": "Insects_damage"
+  },
+  "models": [
+    {
+      "key": "effb3",
+      "timm": "tf_efficientnet_b3.ns_jft_in1k",
+      "ckpt": "effb3_best.pth",
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "crop_pct": 0.904,
+      "img_size": 256,
+      "best_val_macro_f1": 0.995824440362493,
+      "best_src": "raw"
+    },
+    {
+      "key": "effb4",
+      "timm": "tf_efficientnet_b4.ns_jft_in1k",
+      "ckpt": "effb4_best.pth",
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "crop_pct": 0.922,
+      "img_size": 256,
+      "best_val_macro_f1": 0.9968656205576126,
+      "best_src": "raw"
+    },
+    {
+      "key": "convnext",
+      "timm": "convnext_tiny.fb_in22k_ft_in1k",
+      "ckpt": "convnext_best.pth",
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "crop_pct": 0.875,
+      "img_size": 256,
+      "best_val_macro_f1": 0.9956099116689476,
+      "best_src": "raw"
+    },
+    {
+      "key": "densenet",
+      "timm": "densenet121.ra_in1k",
+      "ckpt": "densenet_best.pth",
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "crop_pct": 0.875,
+      "img_size": 256,
+      "best_val_macro_f1": 0.9921710229152007,
+      "best_src": "raw"
+    },
+    {
+      "key": "resnet50",
+      "timm": "resnet50.a1_in1k",
+      "ckpt": "resnet50_best.pth",
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ],
+      "crop_pct": 0.95,
+      "img_size": 256,
+      "best_val_macro_f1": 0.990211874672881,
+      "best_src": "raw"
+    }
+  ],
+  "test_summary": {
+    "effb3": {
+      "acc": 0.99128160418483,
+      "macro_f1": 0.9910670412069
+    },
+    "effb4": {
+      "acc": 0.990409764603313,
+      "macro_f1": 0.9901005991309366
+    },
+    "convnext": {
+      "acc": 0.9895379250217959,
+      "macro_f1": 0.9892105391479611
+    },
+    "densenet": {
+      "acc": 0.987794245858762,
+      "macro_f1": 0.9872497433094178
+    },
+    "resnet50": {
+      "acc": 0.986050566695728,
+      "macro_f1": 0.9857858613589567
+    },
+    "ensemble": {
+      "acc": 0.988666085440279,
+      "macro_f1": 0.9883306642263403
+    },
+    "ensemble_weighted": {
+      "acc": 0.988666085440279,
+      "macro_f1": 0.9883306642263403
+    }
+  }
+}

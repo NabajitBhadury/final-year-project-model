@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "582481205646",
+    "project_id": "final-year-project-perfecto",
+    "storage_bucket": "final-year-project-perfecto.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:582481205646:android:cef795a4c86ab028e4ecdf",
+        "android_client_info": {
+          "package_name": "com.example.final_year_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKjIAK82p_hbIghjyGhdYuVqA5VbXxw5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

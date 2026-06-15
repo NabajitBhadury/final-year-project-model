@@ -1,0 +1,15 @@
+.DS_Store
+.git
+.venv
+__pycache__/
+*.py[cod]
+
+farm_easy_app/build/
+farm_easy_app/
+farm_easy_app/.dart_tool/
+farm_easy_app/ios/Pods/
+farm_easy_app/macos/Pods/
+farm_easy_app/windows/flutter/ephemeral/
+farm_easy_app/linux/flutter/ephemeral/
+
+model/__pycache__/

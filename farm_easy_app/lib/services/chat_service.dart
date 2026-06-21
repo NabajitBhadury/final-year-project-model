@@ -1,9 +1,10 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class ChatService {
-  static const String _apiKey =
-      String.fromEnvironment('OPENROUTER_API_KEY', defaultValue: '');
+  static String get _apiKey =>
+      dotenv.env['OPENROUTER_API_KEY'] ?? '';
   static const String _baseUrl =
       'https://openrouter.ai/api/v1/chat/completions';
 
